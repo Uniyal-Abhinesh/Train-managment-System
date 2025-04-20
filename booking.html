@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Booking Page</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>Welcome, {{ username }}</h2>
+    <p>Phone: {{ phone }}</p>
+    <h3>Select a Train:</h3>
+    <form method="POST" action="/book_ticket">
+      <label for="train_no">Train Number:</label>
+      <input type="text" id="train_no" name="train_no" placeholder="Enter Train Number" required>
+      <input type="hidden" name="username" value="{{ username }}">
+      <input type="hidden" name="phone" value="{{ phone }}">
+      <button type="submit">Book Ticket</button>
+    </form>
+  </div>
+
+</body>
+</html>

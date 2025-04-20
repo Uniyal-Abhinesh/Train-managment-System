@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Railway Management System</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .form-container {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>Railway Booking Form</h2>
+    <input type="text" id="username" placeholder="Enter Username" required>
+    <input type="tel" id="phone" placeholder="Enter Phone Number" required>
+    <button onclick="submitForm()">Submit</button>
+  </div>
+
+  <script>
+    function submitForm() {
+      const username = document.getElementById('username').value;
+      const phone = document.getElementById('phone').value;
+
+      if (username && phone) {
+        // Redirect with query parameters
+        window.location.href = `booking.html?username=${encodeURIComponent(username)}&phone=${encodeURIComponent(phone)}`;
+      } else {
+        alert('Please fill in all fields.');
+      }
+    }
+  </script>
+
+</body>
+</html>
